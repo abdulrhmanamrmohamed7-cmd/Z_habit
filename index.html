@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102d26">
+<title>Z | خطوة كل يوم</title>
+<style>
+:root{--bg:#f4f6f1;--card:#fff;--ink:#172b25;--muted:#687770;--green:#164b3b;--green2:#dcece2;--gold:#e9bd63;--line:#e3e9e3;--shadow:0 10px 30px #183d2b0d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}.app{max-width:1120px;margin:auto;padding:22px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:11px}.logo{width:48px;height:48px;border-radius:16px;background:var(--green);color:white;display:grid;place-items:center;font-weight:900;font-size:25px;box-shadow:var(--shadow)}h1,h2,h3,p{margin:0}.brand h1{font-size:24px}.brand p,.muted{color:var(--muted);font-size:13px}.date{font-size:13px;color:var(--muted);text-align:left}
+.hero{background:linear-gradient(125deg,#102d26,#1d5b46);border-radius:26px;padding:25px;color:#fff;display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:center;box-shadow:var(--shadow)}
+.eyebrow{color:#c5e5d1;font-size:13px;margin-bottom:8px}.hero h2{font-size:clamp(24px,4vw,34px);margin-bottom:10px}.hero p{color:#d6e7de;line-height:1.8;font-size:14px}.stats{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}.stat{background:#ffffff15;border:1px solid #ffffff1c;border-radius:14px;padding:11px 14px;min-width:100px}.stat strong{display:block;font-size:20px}.stat span{font-size:12px;color:#d6e7de}.progress-wrap{background:#ffffff22;border-radius:99px;height:9px;margin-top:14px;overflow:hidden}.progress{height:100%;background:#d7efb1;width:0;transition:width .2s}.hero-side{background:#ffffff10;border:1px solid #ffffff20;border-radius:20px;padding:20px}.hero-side .big{font-size:42px;margin-bottom:8px}.hero-side h3{font-size:17px;margin-bottom:7px}.hero-side p{font-size:13px}
+.tabs{display:flex;gap:8px;overflow:auto;padding:17px 0}.tab{border:1px solid var(--line);background:var(--card);color:var(--muted);padding:10px 15px;border-radius:13px;white-space:nowrap}.tab.active{background:var(--green);border-color:var(--green);color:#fff}
+.layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr);gap:18px}.panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--shadow);margin-bottom:18px}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.panel h3{font-size:18px}.pill{font-size:12px;background:var(--green2);color:var(--green);border-radius:99px;padding:6px 10px}
+.add-form{display:flex;gap:8px;margin-bottom:14px}.add-form input{min-width:0;flex:1;border:1px solid var(--line);border-radius:12px;padding:12px;background:#fbfcfa;outline-color:#5b9b7c}.add-form select{width:115px;border:1px solid var(--line);border-radius:12px;padding:8px;background:#fbfcfa}.primary{border:0;background:var(--green);color:#fff;border-radius:12px;padding:11px 15px;font-weight:700}.task-list{display:grid;gap:9px}.task{display:flex;align-items:center;gap:11px;border:1px solid var(--line);border-radius:14px;padding:12px}.task input{accent-color:var(--green);width:19px;height:19px}.task-name{flex:1;overflow-wrap:anywhere}.task.done .task-name{text-decoration:line-through;color:#87918a}.task-meta{font-size:12px;color:var(--muted);white-space:nowrap}.delete{border:0;background:transparent;color:#8c9991;font-size:18px;padding:4px}.empty{padding:22px;text-align:center;color:var(--muted);font-size:14px}
+.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.quick{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fcfdfb}.quick .emoji{font-size:23px;margin-bottom:10px}.quick h4{font-size:14px;margin-bottom:5px}.quick p{font-size:12px;color:var(--muted);line-height:1.6}.quick button{margin-top:12px;width:100%;border:1px solid #cfe0d4;background:#f0f7f1;color:var(--green);padding:8px;border-radius:10px;font-weight:700;font-size:12px}
+.challenge{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}.challenge:last-child{border:0}.challenge-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#f3f0e3;font-size:21px}.challenge div:nth-child(2){flex:1}.challenge h4{font-size:14px;margin-bottom:5px}.challenge p{font-size:12px;color:var(--muted);line-height:1.6}.challenge button{border:1px solid var(--line);background:white;border-radius:10px;padding:8px 10px;font-size:12px;color:var(--green)}
+.quote{background:#f5f1e6;border-radius:15px;padding:16px;line-height:1.8;font-size:14px}.quote small{display:block;color:var(--muted);margin-top:8px}.notice{font-size:12px;color:var(--muted);line-height:1.7;margin-top:14px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#102d26;color:white;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow);display:none;z-index:5}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:10px 0 24px}
+@media(max-width:760px){.app{padding:14px}.hero{grid-template-columns:1fr;padding:20px}.hero-side{display:flex;align-items:center;gap:15px}.hero-side .big{margin:0}.layout{grid-template-columns:1fr}.date{display:none}.add-form{flex-wrap:wrap}.add-form input{flex-basis:100%}.add-form select{flex:1}.quick-grid{grid-template-columns:1fr 1fr}.panel{padding:16px}}
+@media(max-width:390px){.quick-grid{grid-template-columns:1fr}.task-meta{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand"><div class="logo">Z</div><div><h1>Z — خُطوة</h1><p>كل يوم خطوة.. كل خطوة بتفرق</p></div></div>
+  <div class="date" id="today"></div>
+</header>
+<section class="hero">
+  <div>
+    <div class="eyebrow">مساحتك الصغيرة للتغيير 🌱</div>
+    <h2>أهلاً بيك.. نبدأ بخطوة؟</h2>
+    <p>مش مطلوب منك تبقى مثالي. اختار خطوة صغيرة، خلّصها، وكمّل يومك على قد طاقتك.</p>
+    <div class="stats">
+      <div class="stat"><strong id="points">0</strong><span>نقطة</span></div>
+      <div class="stat"><strong id="completed">0/0</strong><span>مهام مكتملة</span></div>
+      <div class="stat"><strong id="level">1</strong><span>المستوى</span></div>
+    </div>
+    <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+  </div>
+  <div class="hero-side"><div class="big">🎯</div><div><h3>هدفك النهارده</h3><p>أنجز حاجة واحدة مهمة، حتى لو بسيطة. الاستمرار أهم من الكمال.</p></div></div>
+</section>
+<nav class="tabs" aria-label="أقسام الموقع">
+  <button class="tab active" data-tab="home">🏠 الرئيسية</button>
+  <button class="tab" data-tab="tasks">✅ مهامي</button>
+  <button class="tab" data-tab="challenges">🏆 التحديات</button>
+  <button class="tab" data-tab="growth">🌱 تطوري</button>
+</nav>
+<div class="layout">
+  <main>
+    <section class="panel" id="tasksPanel">
+      <div class="panel-head"><h3>مهام النهارده</h3><span class="pill" id="taskCount">0 مهام</span></div>
+      <form class="add-form" id="taskForm">
+        <input id="taskInput" maxlength="90" placeholder="اكتب مهمة عايز تخلصها..." required>
+        <select id="taskPoints" aria-label="نقاط المهمة"><option value="5">سهلة · 5 نقاط</option><option value="10" selected>متوسطة · 10 نقاط</option><option value="20">كبيرة · 20 نقطة</option></select>
+        <button class="primary" type="submit">+ إضافة</button>
+      </form>
+      <div class="task-list" id="taskList"></div>
+      <p class="notice">مهم: دي نسخة تجريبية؛ المهام والنقاط بتتحفظ على نفس المتصفح والجهاز فقط، ومش مرتبطة بحساب مستخدم لسه.</p>
+    </section>
+    <section class="panel" id="quickPanel">
+      <div class="panel-head"><h3>خطوات صغيرة ليومك</h3><span class="pill">اختار اللي يناسبك</span></div>
+      <div class="quick-grid">
+        <article class="quick"><div class="emoji">📖</div><h4>ورد القرآن</h4><p>اقرأ آيات قليلة بتدبر، على قد وقتك.</p><button onclick="addSuggested('قراءة ورد من القرآن',10)">أضيفها لمهامي</button></article>
+        <article class="quick"><div class="emoji">🎧</div><h4>اتعلم حاجة</h4><p>اسمع محتوى مفيد 10 دقايق.</p><button onclick="addSuggested('سماع محتوى مفيد 10 دقايق',5)">أضيفها لمهامي</button></article>
+        <article class="quick"><div class="emoji">📚</div><h4>جلسة تركيز</h4><p>ابدأ بـ25 دقيقة مذاكرة من غير مشتتات.</p><button onclick="addSuggested('جلسة تركيز 25 دقيقة',10)">أضيفها لمهامي</button></article>
+        <article class="quick"><div class="emoji">🧠</div><h4>راجع يومك</h4><p>اكتب حاجة كويسة عملتها وحاجة تحسنها بكرة.</p><button onclick="addSuggested('مراجعة اليوم وتجهيز بكرة',5)">أضيفها لمهامي</button></article>
+      </div>
+    </section>
+  </main>
+  <aside>
+    <section class="panel" id="challengePanel">
+      <div class="panel-head"><h3>تحديات تبدأ بيها</h3><span class="pill">خفيفة</span></div>
+      <div class="challenge"><div class="challenge-icon">🔥</div><div><h4>تحدي 3 أيام</h4><p>أنجز مهمة واحدة يوميًا لمدة 3 أيام.</p></div><button onclick="joinChallenge('تحدي 3 أيام')">ابدأ</button></div>
+      <div class="challenge"><div class="challenge-icon">📵</div><div><h4>نص ساعة بلا مشتتات</h4><p>سيب الموبايل وركّز في حاجة مهمة.</p></div><button onclick="joinChallenge('نص ساعة بلا مشتتات')">ابدأ</button></div>
+      <div class="challenge"><div class="challenge-icon">🌙</div><div><h4>قفل اليوم بهدوء</h4><p>راجع يومك وحدد أول مهمة لبكرة.</p></div><button onclick="joinChallenge('قفل اليوم بهدوء')">ابدأ</button></div>
+    </section>
+    <section class="panel">
+      <div class="panel-head"><h3>رسالة ليك</h3><span>💚</span></div>
+      <div class="quote">«مش لازم تعمل كل حاجة النهارده. اعمل الحاجة الصح اللي تقدر عليها، وارجع بكرة كمل.»<small>— تذكير من Z</small></div>
+    </section>
+    <section class="panel" id="growthPanel">
+      <div class="panel-head"><h3>تطورك</h3><span class="pill">من بداية التجربة</span></div>
+      <p style="font-size:14px;line-height:1.8">كل مهمة بتخلصها بتثبت لنفسك إنك تقدر تلتزم. خلي هدفك تقدم حقيقي، مش مجرد تجميع نقاط.</p>
+      <div style="margin-top:14px;padding:13px;background:#f5f8f4;border-radius:13px"><div class="muted">إجمالي المهام اللي خلصتها</div><strong style="font-size:25px" id="allCompleted">0</strong></div>
+    </section>
+  </aside>
+</div>
+<footer>Z — نسخة أولية للتجربة • خطوة واحدة كل يوم</footer>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const STORAGE_KEY='z-habit-prototype-v1';
+let state={tasks:[],points:0,allCompleted:0,joined:[]};
+try{const saved=localStorage.getItem(STORAGE_KEY);if(saved)state={...state,...JSON.parse(saved)}}catch(e){}
+const $=id=>document.getElementById(id);
+const today=new Date();
+$('today').textContent=today.toLocaleDateString('ar-EG',{weekday:'long',day:'numeric',month:'long'});
+function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state))}catch(e){}}
+function toast(message){const el=$('toast');el.textContent=message;el.style.display='block';clearTimeout(window.zToastTimer);window.zToastTimer=setTimeout(()=>el.style.display='none',2200)}
+function render(){
+ const list=$('taskList');list.innerHTML='';
+ if(!state.tasks.length){list.innerHTML='<div class="empty">لسه مفيش مهام. اكتب أول خطوة ليك فوق 👆</div>'}
+ state.tasks.forEach(task=>{
+  const row=document.createElement('div');row.className='task'+(task.done?' done':'');
+  const check=document.createElement('input');check.type='checkbox';check.checked=task.done;check.setAttribute('aria-label','إنجاز '+task.name);
+  check.addEventListener('change',()=>{task.done=check.checked;if(task.done){state.points+=task.points;state.allCompleted++;toast('عاش! '+task.points+' نقطة اتضافت 🎉')}else{state.points=Math.max(0,state.points-task.points);state.allCompleted=Math.max(0,state.allCompleted-1);toast('اتلغى الإنجاز واتخصمت النقاط')}save();render()});
+  const name=document.createElement('div');name.className='task-name';name.textContent=task.name;
+  const meta=document.createElement('div');meta.className='task-meta';meta.textContent='+'+task.points+' نقطة';
+  const del=document.createElement('button');del.className='delete';del.textContent='×';del.title='حذف المهمة';del.setAttribute('aria-label','حذف المهمة');del.addEventListener('click',()=>{if(task.done){state.points=Math.max(0,state.points-task.points);state.allCompleted=Math.max(0,state.allCompleted-1)}state.tasks=state.tasks.filter(t=>t.id!==task.id);save();render();toast('المهمة اتحذفت')});
+  row.append(check,name,meta,del);list.append(row)
+ });
+ const done=state.tasks.filter(t=>t.done).length,total=state.tasks.length;
+ $('points').textContent=state.points;$('completed').textContent=done+'/'+total;$('taskCount').textContent=total+' مهام';$('level').textContent=Math.floor(state.points/100)+1;$('progress').style.width=(total?done/total*100:0)+'%';$('allCompleted').textContent=state.allCompleted;
+}
+function addTask(name,points){name=name.trim();if(!name)return;state.tasks.unshift({id:Date.now()+Math.random(),name,points:Number(points),done:false});save();render();toast('اتضافت المهمة.. يلا نبدأ 💪')}
+$('taskForm').addEventListener('submit',e=>{e.preventDefault();addTask($('taskInput').value,$('taskPoints').value);$('taskInput').value='';$('taskInput').focus()});
+function addSuggested(name,points){addTask(name,points)}
+function joinChallenge(name){if(state.joined.includes(name)){toast('إنت بدأت التحدي ده بالفعل 💪');return}state.joined.push(name);save();toast('بدأت '+name+'! أضف أول خطوة لمهامك')}
+document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const tab=btn.dataset.tab;if(tab==='tasks')$('tasksPanel').scrollIntoView({behavior:'smooth',block:'start'});else if(tab==='challenges')$('challengePanel').scrollIntoView({behavior:'smooth',block:'start'});else if(tab==='growth')$('growthPanel').scrollIntoView({behavior:'smooth',block:'start'});else window.scrollTo({top:0,behavior:'smooth'})}));
+render();
+</script>
+</body>
+</html>
